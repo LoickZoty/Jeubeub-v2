@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jeubeub">
+
     <queries>
-        <package android:name="com.google.android.apps.walletnfcrel"/>
+        <package android:name="com.google.android.apps.walletnfcrel" />
     </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,17 +13,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jeubeub">
+        <activity
+            android:name=".app.activity.MorpionActivity"
+            android:exported="true" />
+
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
+
         <activity
-            android:name=".activity.ShopActivity"
+            android:name=".app.activity.ShopActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.MenuActivity"
-            android:exported="true"/>
+            android:name=".app.activity.MenuActivity"
+            android:exported="true" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".app.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

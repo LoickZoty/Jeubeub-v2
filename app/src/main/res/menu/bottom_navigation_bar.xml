@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/leaderbord_button"
+        android:icon="@drawable/baseline_emoji_events_24"
+        android:title="@string/leaderbord_label"/>
+    <item
+        android:id="@+id/games_button"
+        android:icon="@drawable/baseline_games_24"
+        android:title="@string/games_label"/>
+    <item
+        android:id="@+id/friends_button"
+        android:icon="@drawable/baseline_people_24"
+        android:title="@string/friends_label"/>
+    <item
+        android:id="@+id/shop_button"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:title="@string/shop_label"/>
+</menu>

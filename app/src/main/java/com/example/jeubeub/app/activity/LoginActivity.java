@@ -1,4 +1,4 @@
-package com.example.jeubeub.activity;
+package com.example.jeubeub.app.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

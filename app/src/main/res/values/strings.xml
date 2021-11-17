@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Jeubeub</string>
     <string name="app_id">416182164062</string>
+    <string name="jeubeub">Jeubeub</string>
+    <string name="shop_label">Boutique</string>
+    <string name="games_label">Jeux</string>
+    <string name="friends_label">Amis</string>
+    <string name="leaderbord_label">Leaderboard</string>
+    <string name="label_item_2">Item 2 2.99€</string>
+    <string name="label_item_1">Item 1 0.99€</string>
+
 </resources>
