@@ -41,6 +41,7 @@ public class ShopActivity extends AppCompatActivity {
     private static final int LOAD_PAYMENT_DATA_REQUEST_CODE = 991;
 
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
