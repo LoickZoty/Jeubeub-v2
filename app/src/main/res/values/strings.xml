@@ -8,5 +8,12 @@
     <string name="leaderbord_label">Leaderboard</string>
     <string name="label_item_2">Item 2 2.99€</string>
     <string name="label_item_1">Item 1 0.99€</string>
+    <string name="default_friend_name">nom de l\'ami</string>
+    <string name="description_profile_image">profile image</string>
+    <string name="invite_friend">Inviter</string>
+    <string name="description_item">item_description</string>
+    <string name="buy_button">Acheter</string>
+    <string name="nom_item_default">Nom article</string>
+    <string name="default_price">0€</string>
 
 </resources>

@@ -8,10 +8,13 @@
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/drawable/baseline_emoji_events_24.xml" value="0.159375" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/drawable/baseline_shopping_cart_24.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/drawable/bottom_navigation_colors.xml" value="0.1578125" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_game.xml" value="0.12395833333333334" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_login.xml" value="0.14114583333333333" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_menu.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_morpion.xml" value="0.22010869565217392" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_shop.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/adapter_friend.xml" value="0.264" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/adapter_shop.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/fragment_friends.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/fragment_games.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/fragment_leaderboard.xml" value="0.13020833333333334" />
@@ -19,6 +22,7 @@
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/main_activity.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.14166666666666666" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/xml/adapter.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

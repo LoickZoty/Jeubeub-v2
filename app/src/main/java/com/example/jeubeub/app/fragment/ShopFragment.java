@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,8 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.example.jeubeub.R;
+import com.example.jeubeub.app.adapter.ArticleItemAdapter;
+import com.example.jeubeub.app.model.ArticleItem;
 import com.example.jeubeub.app.service.ShopService;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.wallet.AutoResolveHelper;
@@ -25,22 +28,22 @@ import com.google.android.gms.wallet.PaymentsClient;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
 public class ShopFragment extends Fragment {
 
-    Button Gpay_item_1;
-    Button Gpay_item_2;
-    ShopService shopService;
+    private ShopService shopService;
+    private ListView articleListView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_shop, container, false);
-        Gpay_item_1 = view.findViewById(R.id.Gpay_item_1);
-        Gpay_item_2 = view.findViewById(R.id.Gpay_item_2);
-        shopService = new ShopService(getActivity());
+        articleListView = view.findViewById(R.id.article_listView);
+        this.shopService = new ShopService(getActivity());
         return view;
     }
 
@@ -48,8 +51,10 @@ public class ShopFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Gpay_item_1.setOnClickListener(v -> shopService.requestPayment(Gpay_item_1));
-        Gpay_item_2.setOnClickListener(v -> shopService.requestPayment(Gpay_item_2));
+        List<ArticleItem> list = new ArrayList<>();
+        list.add(new ArticleItem("Or", 0.99));
+        list.add(new ArticleItem("Gemme", 2.99));
+        articleListView.setAdapter(new ArticleItemAdapter(getContext(), list, this.shopService));
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

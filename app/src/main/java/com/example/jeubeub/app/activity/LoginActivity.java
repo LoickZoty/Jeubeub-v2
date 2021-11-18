@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
 
-    SignInButton signInButton;
     private GoogleSignInClient GoogleClient;
     private static final int LOGIN_SUCCESS = 1;
 
@@ -34,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleClient = GoogleSignIn.getClient(this,gso);
 
 
-        signInButton = findViewById(R.id.sign_in_button);
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setOnClickListener(view -> {
             Intent signIntent = GoogleClient.getSignInIntent();
