@@ -1,8 +1,5 @@
-package callAPI;
+package com.example.jeubeub.app.api;
 
-import com.android.volley.VolleyError;
-
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public interface VolleyCallback {

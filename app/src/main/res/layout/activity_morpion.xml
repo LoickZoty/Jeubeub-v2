@@ -8,30 +8,34 @@
 
     <TableLayout
         android:id="@+id/morpionTable"
-        android:layout_width="416dp"
-        android:layout_height="393dp">
+        android:layout_width="match_parent"
+        android:layout_height="574dp">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
 
             <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:id="@+id/imageView"
+                android:layout_width="149dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="149dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
+
         </TableRow>
 
         <TableRow
@@ -39,46 +43,51 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:id="@+id/imageView3"
+                android:layout_width="103dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_width="103dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/rond"
+                tools:srcCompat="@drawable/rond" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="103dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="137dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="103dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="103dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_width="103dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/croix"
+                tools:srcCompat="@drawable/croix" />
         </TableRow>
 
     </TableLayout>

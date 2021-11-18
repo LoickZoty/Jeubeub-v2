@@ -17,6 +17,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
+    public static int token = 1; //Pour le test
 
     private GoogleSignInClient GoogleClient;
     private static final int LOGIN_SUCCESS = 1;
