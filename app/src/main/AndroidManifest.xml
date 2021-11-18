@@ -23,9 +23,6 @@
             android:value="true" />
 
         <activity
-            android:name=".app.activity.ShopActivity"
-            android:exported="true" />
-        <activity
             android:name=".app.activity.MenuActivity"
             android:exported="true" />
         <activity
@@ -38,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.GameActivity"
+            android:name=".app.activity.GameActivity"
             android:exported="true" />
     </application>
 

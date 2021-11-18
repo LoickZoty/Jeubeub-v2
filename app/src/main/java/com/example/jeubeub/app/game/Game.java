@@ -1,6 +1,7 @@
-package com.example.jeubeub.game;
+package com.example.jeubeub.app.game;
 
 import android.app.Activity;
+import android.os.Parcelable;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -12,14 +13,18 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 import callAPI.VolleyCallback;
 
-public abstract class Game {
+public abstract class Game implements Serializable {
     protected int gameId;
 
     public Game(JSONObject json) throws JSONException {
         this.gameId = json.getInt("id");
     }
+
+    public abstract Class<?> getActivity();
 
     public abstract void graphicsRefreshment(JSONObject json);
 
