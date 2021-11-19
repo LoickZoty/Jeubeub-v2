@@ -36,10 +36,6 @@
         <activity
             android:name=".app.activity.gameActivity.MorpionActivity"
             android:exported="true" />
-        <activity
-            android:name=".app.popup.endGamePopup.EndGamePopup"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:exported="true" />
     </application>
 
 </manifest>
