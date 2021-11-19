@@ -4,90 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".app.activity.MorpionActivity">
+    tools:context=".app.activity.gameActivity.MorpionActivity">
 
     <TableLayout
         android:id="@+id/morpionTable"
         android:layout_width="match_parent"
-        android:layout_height="574dp">
+        android:layout_height="match_parent"
+        android:stretchColumns="*">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="30dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/empty"
+                tools:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="149dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="149dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
 
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="0dp"
+            android:layout_height="0dp">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="103dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="103dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/rond"
-                tools:srcCompat="@drawable/rond" />
+                tools:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="103dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="137dp">
+            android:layout_width="0dp"
+            android:layout_height="163dp">
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="103dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="103dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="103dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/croix"
-                tools:srcCompat="@drawable/croix" />
+                tools:srcCompat="@drawable/empty" />
         </TableRow>
 
     </TableLayout>

@@ -17,7 +17,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
-    public static int token = 1; //Pour le test
+    public final static String JEUBEUB_API = "http://149.202.40.246:8786/Jeubeub/api/v1"; //A mettre dans une classe plus adequate
+    public static int USER_TOKEN = 1; //Pour le test
 
     private GoogleSignInClient GoogleClient;
     private static final int LOGIN_SUCCESS = 1;

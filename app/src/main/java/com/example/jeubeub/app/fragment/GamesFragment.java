@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import com.example.jeubeub.R;
-import com.example.jeubeub.app.activity.MorpionActivity;
+import com.example.jeubeub.app.activity.gameActivity.MorpionActivity;
 
 
 public class GamesFragment extends Fragment {

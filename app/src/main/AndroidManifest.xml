@@ -14,10 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jeubeub">
-        <activity
-            android:name=".app.activity.MorpionActivity"
-            android:exported="true" />
-
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
@@ -35,7 +31,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.activity.GameActivity"
+            android:name=".app.activity.gameActivity.QueueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".app.activity.gameActivity.MorpionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".app.popup.endGamePopup.EndGamePopup"
+            android:theme="@style/Theme.AppCompat.Light"
             android:exported="true" />
     </application>
 
