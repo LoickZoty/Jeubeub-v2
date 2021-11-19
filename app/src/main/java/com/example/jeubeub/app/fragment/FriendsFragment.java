@@ -33,7 +33,6 @@ public class FriendsFragment extends Fragment {
     public void onStart() {
         super.onStart();
         this.friendService.loadFriend(list -> {
-            System.out.println(list);
             friendListView.setAdapter(new FriendItemAdapter(getContext(), list));
         });
     }
