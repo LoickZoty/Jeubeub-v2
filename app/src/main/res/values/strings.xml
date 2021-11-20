@@ -15,5 +15,6 @@
     <string name="buy_button">Acheter</string>
     <string name="nom_item_default">Nom article</string>
     <string name="default_price">0€</string>
+    <string name="voir_profil">Profil</string>
 
 </resources>

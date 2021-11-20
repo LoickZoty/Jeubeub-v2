@@ -14,6 +14,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.games.LeaderboardsClient;
+import com.google.android.gms.games.PlayersClient;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,6 +26,9 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient GoogleClient;
     private static final int LOGIN_SUCCESS = 1;
 
+    private static LeaderboardsClient leaderboardsClient;
+    private static PlayersClient playersClient;
+    private static String displayName;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -33,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
         GoogleClient = GoogleSignIn.getClient(this,gso);
-
 
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
@@ -49,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
         @SuppressLint("RestrictedApi") GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null){
             Toast.makeText(this,"Bonjour " + account.getGivenName(), Toast.LENGTH_SHORT).show();
+            playersClient = Games.getPlayersClient(this, account);
+            leaderboardsClient = Games.getLeaderboardsClient(this, account);
+            displayName = account.getDisplayName();
             startActivity(new Intent(LoginActivity.this, MenuActivity.class));
         }
     }
@@ -65,9 +73,24 @@ public class LoginActivity extends AppCompatActivity {
     private void handleSignInResult (Task< GoogleSignInAccount > completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            playersClient = Games.getPlayersClient(this, account);
+            leaderboardsClient = Games.getLeaderboardsClient(this, account);
+            displayName = account.getDisplayName();
             startActivity(new Intent(LoginActivity.this, MenuActivity.class));
         } catch (ApiException e) {
             System.out.println("signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    public static PlayersClient getPlayersClient(){
+        return playersClient;
+    }
+
+    public static LeaderboardsClient getLeaderboardsClient(){
+        return leaderboardsClient;
+    }
+
+    public static String getDisplayName() {
+        return displayName;
     }
 }

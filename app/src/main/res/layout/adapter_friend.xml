@@ -31,4 +31,12 @@
         android:tag=""
         />
 
+    <Button
+        android:id="@+id/show_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:text="@string/voir_profil"
+        />
+
 </LinearLayout>

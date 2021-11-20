@@ -6,6 +6,9 @@
         <package android:name="com.google.android.apps.walletnfcrel" />
     </queries>
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
@@ -15,12 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jeubeub">
         <activity
-            android:name=".app.activity.MorpionActivity"
+            android:name=".app.activity.gameActivity.GameActivity"
             android:exported="true" />
 
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
+
+        <meta-data android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
 
         <activity
             android:name=".app.activity.MenuActivity"
@@ -35,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.activity.GameActivity"
+            android:name=".app.activity.gameActivity.MorpionActivity"
             android:exported="true" />
     </application>
 
