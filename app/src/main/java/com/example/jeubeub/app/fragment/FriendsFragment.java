@@ -1,34 +1,18 @@
 package com.example.jeubeub.app.fragment;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.PlatformVpnProfile;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.jeubeub.R;
-import com.example.jeubeub.app.activity.LoginActivity;
 import com.example.jeubeub.app.adapter.FriendItemAdapter;
 import com.example.jeubeub.app.service.FriendService;
-import com.google.android.gms.games.Player;
-import com.google.android.gms.games.PlayerBuffer;
-import com.google.android.gms.tasks.OnSuccessListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class FriendsFragment extends Fragment {

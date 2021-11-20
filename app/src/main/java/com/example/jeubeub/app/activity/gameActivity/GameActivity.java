@@ -30,13 +30,7 @@ public abstract class GameActivity extends AppCompatActivity {
         setContentView(this.getContentView());
 
         view = findViewById(android.R.id.content).getRootView();
-        //game = (Game)getIntent().getExtras().getSerializable("game");
-
-        try {
-            game = new Morpion(new JSONObject("{\"name\":\"Morpion\",\"id\":0,\"players\":[1,2],\"actualPlayer\":1,\"playersRankingFinishGame\":[],\"actualGameData\":{\"map\":[[2,0,0],[2,2,2],[2,2,2]]},\"finishGame\":false}"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        game = (Game)getIntent().getExtras().getSerializable("game");
 
         viewRefreshmentLoop();
     }

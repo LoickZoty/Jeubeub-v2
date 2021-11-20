@@ -20,7 +20,7 @@ public class EndGameMorpionPopup extends EndGamePopup {
 
     @Override
     public void setView() {
-        this.setView();
+        super.setView();
 
         TextView titleText = (TextView)findViewById(R.id.titleTextEndGame);
         if (game.playersRankingFinishGame.get(0) == LoginActivity.USER_TOKEN) {
