@@ -18,7 +18,7 @@ import com.example.jeubeub.app.activity.gameActivity.MorpionActivity;
 
 public class GamesFragment extends Fragment {
 
-    Button morpion_button;
+    private Button morpion_button;
 
     @Nullable
     @Override
@@ -28,7 +28,6 @@ public class GamesFragment extends Fragment {
         return view;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onStart() {
         super.onStart();

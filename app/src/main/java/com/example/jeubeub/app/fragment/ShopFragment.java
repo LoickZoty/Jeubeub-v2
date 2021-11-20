@@ -47,7 +47,6 @@ public class ShopFragment extends Fragment {
         return view;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onStart() {
         super.onStart();
@@ -72,7 +71,6 @@ public class ShopFragment extends Fragment {
 
                 case AutoResolveHelper.RESULT_ERROR:
                     Status status = AutoResolveHelper.getStatusFromIntent(data);
-                    Toast.makeText(getActivity(), "Error googlePay " + status.getStatusCode(), Toast.LENGTH_SHORT).show();
                     break;
             }
         }

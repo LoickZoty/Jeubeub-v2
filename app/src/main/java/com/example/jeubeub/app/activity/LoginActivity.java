@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     private static PlayersClient playersClient;
     private static String displayName;
 
-    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart () {
         super.onStart();
-        @SuppressLint("RestrictedApi") GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null){
             Toast.makeText(this,"Bonjour " + account.getGivenName(), Toast.LENGTH_SHORT).show();
             playersClient = Games.getPlayersClient(this, account);

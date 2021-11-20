@@ -16,5 +16,10 @@
     <string name="nom_item_default">Nom article</string>
     <string name="default_price">0€</string>
     <string name="voir_profil">Profil</string>
+    <string name="morpion">Morpion</string>
+    <string name="nombre_de_victoire">Nombre de victoire</string>
+    <string name="id_leaderboard_morpion_victoire">CgkI3rSPs44MEAIQAg</string>
+    <string name="nombre_de_defaite">Nombre de defaite</string>
+    <string name="id_leaderboard_morpion_defaite">CgkI3rSPs44MEAIQAw</string>
 
 </resources>
