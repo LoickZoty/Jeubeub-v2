@@ -24,9 +24,9 @@ public class LoginActivity extends AppCompatActivity {
     public final static String JEUBEUB_API = "http://149.202.40.246:8786/Jeubeub/api/v1"; //A mettre dans une classe plus adequate
     public static int USER_TOKEN = 1; //Pour le test
 
-    private GoogleSignInClient GoogleClient;
     private static final int LOGIN_SUCCESS = 1;
 
+    private static GoogleSignInClient googleClient;
     private static LeaderboardsClient leaderboardsClient;
     private static PlayersClient playersClient;
     private static String displayName;
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .build();
 
-        GoogleClient = GoogleSignIn.getClient(this,gso);
+        googleClient = GoogleSignIn.getClient(this,gso);
 
         VideoView videoLogin = findViewById(R.id.video_login);
         String path = "android.resource://" + getPackageName() + "/" + R.raw.jeubeub;
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setOnClickListener(view -> {
-            Intent signIntent = GoogleClient.getSignInIntent();
+            Intent signIntent = googleClient.getSignInIntent();
             startActivityForResult(signIntent, LOGIN_SUCCESS);
         });
     }
@@ -102,4 +102,6 @@ public class LoginActivity extends AppCompatActivity {
     public static String getDisplayName() {
         return displayName;
     }
+
+    public static GoogleSignInClient getGoogleSignInClient(){return googleClient;}
 }

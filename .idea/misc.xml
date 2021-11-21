@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/drawable/baseline_backpack_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/drawable/baseline_logout_24.xml" value="0.2703125" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/activity_morpion_leaderboard.xml" value="0.15625" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/adapter_friend.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/fragment_inventory.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/layout/fragment_leaderboard.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/etymo/AndroidStudioProjects/Jeubeub-v2/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/loick/Desktop/Jeubeub-v2/app/src/main/res/layout/activity_end_game.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/loick/Desktop/Jeubeub-v2/app/src/main/res/layout/activity_morpion.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/loick/Desktop/Jeubeub-v2/app/src/main/res/layout/dialog_end_game.xml" value="0.20520833333333333" />

@@ -21,5 +21,6 @@
     <string name="id_leaderboard_morpion_victoire">CgkI3rSPs44MEAIQAg</string>
     <string name="nombre_de_defaite">Nombre de defaite</string>
     <string name="id_leaderboard_morpion_defaite">CgkI3rSPs44MEAIQAw</string>
+    <string name="Inventaire">Inventaire</string>
 
 </resources>
