@@ -22,5 +22,6 @@
     <string name="nombre_de_defaite">Nombre de defaite</string>
     <string name="id_leaderboard_morpion_defaite">CgkI3rSPs44MEAIQAw</string>
     <string name="Inventaire">Inventaire</string>
+    <string name="default_quantity">0</string>
 
 </resources>
