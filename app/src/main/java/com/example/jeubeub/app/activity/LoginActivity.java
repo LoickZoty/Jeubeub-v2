@@ -2,10 +2,11 @@ package com.example.jeubeub.app.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.example.jeubeub.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -38,6 +39,15 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
         GoogleClient = GoogleSignIn.getClient(this,gso);
+
+        VideoView videoLogin = findViewById(R.id.video_login);
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.jeubeub;
+        Uri uri = Uri.parse(path);
+        videoLogin.setVideoURI(uri);
+        videoLogin.setOnPreparedListener(mp -> {
+            videoLogin.start();
+            mp.setLooping(true);
+        });
 
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);

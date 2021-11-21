@@ -4,27 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".app.activity.LoginActivity">
+
+    <VideoView
+        android:id="@+id/video_login"
+        android:layout_width="413dp"
+        android:layout_height="478dp"
+        android:layout_marginBottom="256dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="66dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="608dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="192dp"
-        android:text="@string/jeubeub"
-        android:textSize="60sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
