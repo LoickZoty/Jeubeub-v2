@@ -59,7 +59,6 @@ public class MorpionActivity extends GameActivity {
     private void setGraphicsMap(JSONObject json) throws JSONException {
         TableLayout morpionTable = (TableLayout)view.findViewById(R.id.morpionTable);
         JSONArray map = json.getJSONObject("actualGameData").getJSONArray("map");
-        System.out.println("La map : "+map);
         for (int i = 0; i < morpionTable.getChildCount(); i++) {
             TableRow tableRow = (TableRow)morpionTable.getChildAt(i);
             for (int j = 0; j < tableRow.getChildCount(); j++) {

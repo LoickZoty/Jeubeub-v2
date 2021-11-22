@@ -41,6 +41,7 @@ public class QueueActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(JSONObject json) {
                         try {
+                            System.out.println("La file jeu : "+json);
                             Game game = (Game) cls.getConstructor(JSONObject.class).newInstance(json);
                             Intent intent = new Intent(QueueActivity.this, game.getActivity());
                             intent.putExtra("game", game);

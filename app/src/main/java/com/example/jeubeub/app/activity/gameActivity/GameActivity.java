@@ -54,7 +54,7 @@ public abstract class GameActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(JSONObject json) {
                             try {
-                                System.out.println(json);
+                                System.out.println("Le refresh "+json);
                                 game.setData(json);
                                 onSuccessViewRefreshmentLoop(json);
                                 run();
