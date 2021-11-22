@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private static LeaderboardsClient leaderboardsClient;
     private static PlayersClient playersClient;
     private static String displayName;
+    private static GoogleSignInAccount googleSignInAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             playersClient = Games.getPlayersClient(this, account);
             leaderboardsClient = Games.getLeaderboardsClient(this, account);
             displayName = account.getDisplayName();
+            googleSignInAccount = account;
             startActivity(new Intent(LoginActivity.this, MenuActivity.class));
         }
     }
@@ -85,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             playersClient = Games.getPlayersClient(this, account);
             leaderboardsClient = Games.getLeaderboardsClient(this, account);
             displayName = account.getDisplayName();
+            googleSignInAccount = account;
             startActivity(new Intent(LoginActivity.this, MenuActivity.class));
         } catch (ApiException e) {
             System.out.println("signInResult:failed code=" + e.getStatusCode());
@@ -104,4 +107,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public static GoogleSignInClient getGoogleSignInClient(){return googleClient;}
+
+    public static GoogleSignInAccount getGoogleSignInAccount(){return googleSignInAccount;}
 }
