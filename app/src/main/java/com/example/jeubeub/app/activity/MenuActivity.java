@@ -5,15 +5,12 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.example.jeubeub.R;
+import com.example.jeubeub.app.activity.gameActivity.QueueActivity;
 import com.example.jeubeub.app.fragment.FriendsFragment;
-import com.example.jeubeub.app.fragment.GamesFragment;
 import com.example.jeubeub.app.fragment.InventoryFragment;
 import com.example.jeubeub.app.fragment.LeaderboardFragment;
-import com.example.jeubeub.app.fragment.ShopFragment;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivity extends AppCompatActivity {
@@ -35,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
                         selectedFragment = new LeaderboardFragment();
                         break;
                     case R.id.games_button:
-                        selectedFragment = new GamesFragment();
+                        findViewById(R.id.sign_out_button).setOnClickListener(v -> startActivity(new Intent(MenuActivity.this, QueueActivity.class)));
                         break;
                     case R.id.friends_button:
                         selectedFragment = new FriendsFragment();

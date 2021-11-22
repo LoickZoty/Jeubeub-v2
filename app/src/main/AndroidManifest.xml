@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jeubeub">
         <activity
+            android:name=".app.activity.ShopActivity"
+            android:exported="true" />
+        <activity
             android:name=".app.leaderboard.MorpionLeaderboardActivity"
             android:exported="true" />
         <activity

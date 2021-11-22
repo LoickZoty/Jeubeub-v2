@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 
 import com.example.jeubeub.R;
+import com.example.jeubeub.app.activity.ShopActivity;
 import com.example.jeubeub.app.model.ArticleItem;
 import com.example.jeubeub.app.service.ShopService;
 
@@ -22,14 +23,12 @@ public class ArticleItemAdapter extends BaseAdapter {
     private Context context;
     private List<ArticleItem> articleItemList;
     private LayoutInflater inflater;
-    private ShopService shopService;
 
-    public ArticleItemAdapter(Context context, List<ArticleItem> articleItemList, ShopService shopService)
+    public ArticleItemAdapter(Context context, List<ArticleItem> articleItemList)
     {
         this.context = context;
         this.articleItemList = articleItemList;
         this.inflater = LayoutInflater.from(context);
-        this.shopService = shopService;
     }
 
     @Override
@@ -47,13 +46,16 @@ public class ArticleItemAdapter extends BaseAdapter {
         return 0;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = inflater.inflate(R.layout.adapter_shop, null);
         ArticleItem currentItem = getItem(position);
 
+        int id = currentItem.getId();
         String name = currentItem.getName();
         double price = currentItem.getPrice();
+        int quantity = currentItem.getQuantity();
         String string_price = price + "€";
 
         TextView friendNameView = view.findViewById(R.id.item_name);
@@ -63,14 +65,7 @@ public class ArticleItemAdapter extends BaseAdapter {
         item_price.setText(string_price);
 
         Button button_buy = view.findViewById(R.id.buy_item);
-        button_buy.setTag(price);
-        button_buy.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View v) {
-                shopService.requestPayment(button_buy);
-            }
-        });
+        button_buy.setOnClickListener(v -> ((ShopActivity)context).requestPayment(id , quantity, String.valueOf(price)));
 
         return view;
     }
