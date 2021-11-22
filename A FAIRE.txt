@@ -1,0 +1,3 @@
+- corriger popup fin de game
+- api shop
+- inviter un amis requete
