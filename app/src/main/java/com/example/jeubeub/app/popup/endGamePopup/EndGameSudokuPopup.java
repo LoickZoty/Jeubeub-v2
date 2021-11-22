@@ -10,9 +10,11 @@ import com.example.jeubeub.app.activity.LoginActivity;
 import com.example.jeubeub.app.game.Morpion;
 import com.example.jeubeub.app.game.Sudoku;
 
+import org.json.JSONException;
+
 public class EndGameSudokuPopup extends EndGamePopup {
 
-    public EndGameSudokuPopup(@NonNull Context context, Sudoku game) {
+    public EndGameSudokuPopup(@NonNull Context context, Sudoku game) throws JSONException {
         super(context, game);
     }
 

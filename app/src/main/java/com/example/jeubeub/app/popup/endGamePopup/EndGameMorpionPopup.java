@@ -11,7 +11,12 @@ import com.example.jeubeub.app.activity.LoginActivity;
 import com.example.jeubeub.app.game.Game;
 import com.example.jeubeub.app.game.Morpion;
 
+import org.json.JSONException;
+
 public class EndGameMorpionPopup extends EndGamePopup {
+    public final static int EQUAL = 0;
+    public final static int WIN = 1;
+    public final static int LOOSE = 2;
 
     public EndGameMorpionPopup(@NonNull Context context, Morpion game) {
         super(context, game);
@@ -23,10 +28,14 @@ public class EndGameMorpionPopup extends EndGamePopup {
         super.setView();
 
         TextView titleText = (TextView)findViewById(R.id.titleTextEndGame);
-        if (game.playersRankingFinishGame.get(0) == LoginActivity.USER_TOKEN) {
+        System.out.println(game.playersRankingFinishGame);
+        int status = game.playersRankingFinishGame.get(LoginActivity.USER_TOKEN);
+        if (status == EQUAL) {
+            titleText.setText("Egalité");
+        } else if (status == WIN) {
             titleText.setText("Bravo, tu as gagné");
         } else {
-            titleText.setText("Tu as perdu, petite merde");
+            titleText.setText("Tu as perdu");
         }
     }
 

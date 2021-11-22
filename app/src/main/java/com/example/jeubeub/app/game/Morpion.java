@@ -29,7 +29,7 @@ public class Morpion extends Game {
 
     public int getPlayerMarker(JSONArray players) throws JSONException {
         for (int i = 0; i < players.length(); i++) {
-            if (players.getInt(i) == LoginActivity.USER_TOKEN) return i;
+            if (players.getString(i).equals(LoginActivity.USER_TOKEN)) return i;
         }
         return -1;
     }

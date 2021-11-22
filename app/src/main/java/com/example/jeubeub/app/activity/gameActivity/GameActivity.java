@@ -37,7 +37,7 @@ public abstract class GameActivity extends AppCompatActivity {
 
     public abstract int getContentView();
 
-    public abstract EndGamePopup getEndGamePopup();
+    public abstract EndGamePopup getEndGamePopup() throws JSONException;
 
     public void viewRefreshmentLoop() {
         DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(
@@ -71,8 +71,12 @@ public abstract class GameActivity extends AppCompatActivity {
                         }
                     }, GameActivity.this, Game.JEUBEUB_API_GAME + "/" + game.gameId + "/waitRefreshment?playerId=" + LoginActivity.USER_TOKEN, retryPolicy);
                 } else {
-                    EndGamePopup endGamePopup = getEndGamePopup();
-                    endGamePopup.show();
+                    try {
+                        EndGamePopup endGamePopup = getEndGamePopup();
+                        endGamePopup.show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });

@@ -36,7 +36,7 @@ public class SudokuActivity extends GameActivity {
     }
 
     @Override
-    public EndGamePopup getEndGamePopup() {
+    public EndGamePopup getEndGamePopup() throws JSONException {
         return new EndGameSudokuPopup(SudokuActivity.this, sudoku);
     }
 

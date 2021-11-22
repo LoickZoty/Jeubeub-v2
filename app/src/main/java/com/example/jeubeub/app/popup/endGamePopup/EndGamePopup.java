@@ -16,6 +16,8 @@ import com.example.jeubeub.app.activity.gameActivity.QueueActivity;
 import com.example.jeubeub.app.game.Game;
 import com.example.jeubeub.app.popup.Popup;
 
+import org.json.JSONException;
+
 public abstract class EndGamePopup extends Popup {
     protected Context context;
     protected Game game;

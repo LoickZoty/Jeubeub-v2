@@ -36,7 +36,7 @@ public class MorpionActivity extends GameActivity {
     }
 
     @Override
-    public EndGamePopup getEndGamePopup() {
+    public EndGamePopup getEndGamePopup() throws JSONException {
         return new EndGameMorpionPopup(MorpionActivity.this, morpion);
     }
 
@@ -78,7 +78,7 @@ public class MorpionActivity extends GameActivity {
                 tableRow.getChildAt(j).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (morpion.actualPlayer == LoginActivity.USER_TOKEN) {
+                        if (morpion.actualPlayer.equals(LoginActivity.USER_TOKEN)) {
                             ((ImageView)view).setImageResource(getDrawableByMarker(morpion.marker)); //Permet de simuler une mise à jour (ça evite les lags)
                             Game.getRequest(new VolleyCallback() {
                                 @Override

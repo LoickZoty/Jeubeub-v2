@@ -14,6 +14,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.activity.LoginActivity;
 import com.example.jeubeub.app.api.VolleyCallback;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,16 +23,18 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public abstract class Game implements Serializable {
     public final static String JEUBEUB_API_GAME = LoginActivity.JEUBEUB_API+"/game";
 
     public int gameId;
-    public int actualPlayer;
+    public String actualPlayer;
 
     public boolean finishGame;
-    public ArrayList<Integer> playersRankingFinishGame;
+    public Map<String,Integer> playersRankingFinishGame;
 
     public Game(JSONObject json) throws JSONException {
         this.gameId = json.getInt("id");
@@ -64,13 +68,8 @@ public abstract class Game implements Serializable {
     }
 
     public void setData(JSONObject json) throws JSONException {
-        this.actualPlayer = json.getInt("actualPlayer");
+        this.actualPlayer = json.getString("actualPlayer");
         this.finishGame = json.getBoolean("finishGame");
-
-        JSONArray playersRankingFinishGameJson = json.getJSONArray("playersRankingFinishGame");
-        this.playersRankingFinishGame = new ArrayList<Integer>();
-        for (int i = 0; i < playersRankingFinishGameJson.length(); i++) {
-            playersRankingFinishGame.add(playersRankingFinishGameJson.getInt(i));
-        }
+        this.playersRankingFinishGame = new Gson().fromJson(json.getJSONObject("playersRankingFinishGame").toString(), new TypeToken<HashMap<String, Integer>>() {}.getType());
     }
 }
