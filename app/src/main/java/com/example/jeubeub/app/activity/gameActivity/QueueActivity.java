@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.example.jeubeub.R;
+import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
-import com.example.jeubeub.app.game.Game;
-import com.example.jeubeub.app.game.Morpion;
-import com.example.jeubeub.app.game.Sudoku;
+import com.example.jeubeub.app.games.Game;
+import com.example.jeubeub.app.games.Morpion;
+import com.example.jeubeub.app.games.Sudoku;
 
 import org.json.JSONObject;
 
@@ -37,14 +38,14 @@ public class QueueActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Game.getRequest(new VolleyCallback() {
+                Request.getRequest(new VolleyCallback() {
                     @Override
                     public void onSuccess(JSONObject json) {
                         try {
                             System.out.println("La file jeu : "+json);
                             Game game = (Game) cls.getConstructor(JSONObject.class).newInstance(json);
                             Intent intent = new Intent(QueueActivity.this, game.getActivity());
-                            intent.putExtra("game", game);
+                            intent.putExtra("games", game);
                             startActivity(intent);
                         } catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
                             System.err.println("onSuccess catch : " + e);

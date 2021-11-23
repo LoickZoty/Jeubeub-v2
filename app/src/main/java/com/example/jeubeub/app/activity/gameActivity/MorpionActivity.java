@@ -7,12 +7,12 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import com.example.jeubeub.R;
-import com.example.jeubeub.app.activity.LoginActivity;
+import com.example.jeubeub.app.LoginActivity;
+import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
-import com.example.jeubeub.app.game.Game;
-import com.example.jeubeub.app.game.Morpion;
-import com.example.jeubeub.app.popup.endGamePopup.EndGameMorpionPopup;
-import com.example.jeubeub.app.popup.endGamePopup.EndGamePopup;
+import com.example.jeubeub.app.games.Morpion;
+import com.example.jeubeub.app.games.popup.endGamePopup.EndGameMorpionPopup;
+import com.example.jeubeub.app.games.popup.endGamePopup.EndGamePopup;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -80,7 +80,7 @@ public class MorpionActivity extends GameActivity {
                     public void onClick(View view) {
                         if (morpion.actualPlayer.equals(LoginActivity.USER_TOKEN)) {
                             ((ImageView)view).setImageResource(getDrawableByMarker(morpion.marker)); //Permet de simuler une mise à jour (ça evite les lags)
-                            Game.getRequest(new VolleyCallback() {
+                            Request.getRequest(new VolleyCallback() {
                                 @Override
                                 public void onSuccess(JSONObject json) {
                                     System.err.println(json);

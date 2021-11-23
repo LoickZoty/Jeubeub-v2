@@ -18,10 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jeubeub">
         <activity
-            android:name=".app.activity.ShopActivity"
+            android:name=".app.inventory.shop.activity.ShopActivity"
             android:exported="true" />
         <activity
-            android:name=".app.leaderboard.MorpionLeaderboardActivity"
+            android:name=".app.leaderboard.activity.MorpionLeaderboardActivity"
             android:exported="true" />
         <activity
             android:name=".app.activity.gameActivity.GameActivity"
@@ -38,10 +38,10 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".app.activity.MenuActivity"
+            android:name=".app.MenuActivity"
             android:exported="true" />
         <activity
-            android:name=".app.activity.LoginActivity"
+            android:name=".app.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

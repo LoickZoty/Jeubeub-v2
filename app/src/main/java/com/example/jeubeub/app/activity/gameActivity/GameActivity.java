@@ -1,22 +1,19 @@
 package com.example.jeubeub.app.activity.gameActivity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.DefaultRetryPolicy;
-import com.example.jeubeub.app.activity.LoginActivity;
+import com.example.jeubeub.app.LoginActivity;
+import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
-import com.example.jeubeub.app.game.Game;
-import com.example.jeubeub.app.game.Morpion;
-import com.example.jeubeub.app.popup.endGamePopup.EndGamePopup;
+import com.example.jeubeub.app.games.Game;
+import com.example.jeubeub.app.games.popup.endGamePopup.EndGamePopup;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.lang.reflect.InvocationTargetException;
 
 public abstract class GameActivity extends AppCompatActivity {
     public final static int MAX_TIME_REQUEST_REFRESHMENT = 60000;
@@ -30,7 +27,7 @@ public abstract class GameActivity extends AppCompatActivity {
         setContentView(this.getContentView());
 
         view = findViewById(android.R.id.content).getRootView();
-        game = (Game)getIntent().getExtras().getSerializable("game");
+        game = (Game)getIntent().getExtras().getSerializable("games");
 
         viewRefreshmentLoop();
     }
@@ -50,7 +47,7 @@ public abstract class GameActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (!game.finishGame) {
-                    Game.getRequest(new VolleyCallback() {
+                    Request.getRequest(new VolleyCallback() {
                         @Override
                         public void onSuccess(JSONObject json) {
                             try {
