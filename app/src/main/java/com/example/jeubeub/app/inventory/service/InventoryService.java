@@ -15,6 +15,7 @@ import androidx.activity.result.ActivityResultLauncher;
 
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.LoginActivity;
+import com.example.jeubeub.app.MenuActivity;
 import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
 import com.example.jeubeub.app.inventory.model.InventoryItem;
@@ -55,7 +56,7 @@ public class InventoryService {
             public void onError(Exception exception) {
                 System.err.println(exception.getMessage());
             }
-        }, activity, LoginActivity.JEUBEUB_API + "/shop/displayItemsPlayer?playerId=" + id, null);
+        }, activity, MenuActivity.JEUBEUB_API + "/shop/displayItemsPlayer?playerId=" + id, null);
     }
 
     private ArrayAdapter<InventoryItem> getAdapter(List<InventoryItem> articles, final LayoutInflater inflater) {

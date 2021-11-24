@@ -7,7 +7,8 @@ import androidx.annotation.NonNull;
 
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.LoginActivity;
-import com.example.jeubeub.app.games.Morpion;
+import com.example.jeubeub.app.games.model.Morpion;
+import com.example.jeubeub.app.games.popup.EndGamePopup;
 
 public class EndGameMorpionPopup extends EndGamePopup {
     public final static int EQUAL = 0;

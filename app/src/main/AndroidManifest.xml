@@ -24,7 +24,7 @@
             android:name=".app.leaderboard.activity.MorpionLeaderboardActivity"
             android:exported="true" />
         <activity
-            android:name=".app.activity.gameActivity.GameActivity"
+            android:name=".app.games.activity.GameActivity"
             android:exported="true" />
 
         <meta-data
@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.activity.gameActivity.QueueActivity"
+            android:name=".app.games.activity.QueueActivity"
             android:exported="true" />
         <activity
             android:name=".app.activity.gameActivity.MorpionActivity"

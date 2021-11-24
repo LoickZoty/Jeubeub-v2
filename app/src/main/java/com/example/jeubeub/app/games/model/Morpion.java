@@ -1,7 +1,7 @@
-package com.example.jeubeub.app.games;
+package com.example.jeubeub.app.games.model;
 
 import com.example.jeubeub.app.LoginActivity;
-import com.example.jeubeub.app.activity.gameActivity.MorpionActivity;
+import com.example.jeubeub.app.games.activity.MorpionActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

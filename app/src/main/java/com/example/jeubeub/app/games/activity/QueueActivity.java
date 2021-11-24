@@ -1,4 +1,4 @@
-package com.example.jeubeub.app.activity.gameActivity;
+package com.example.jeubeub.app.games.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.example.jeubeub.R;
+import com.example.jeubeub.app.LoginActivity;
 import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
-import com.example.jeubeub.app.games.Game;
-import com.example.jeubeub.app.games.Morpion;
-import com.example.jeubeub.app.games.Sudoku;
+import com.example.jeubeub.app.games.model.Game;
+import com.example.jeubeub.app.games.model.Morpion;
+import com.example.jeubeub.app.games.model.Sudoku;
 
 import org.json.JSONObject;
 
@@ -21,14 +22,15 @@ import java.lang.reflect.InvocationTargetException;
 public class QueueActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Yes???????");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_queue);
 
-        onClickBtnQueueGame(Morpion.class, (Button)findViewById(R.id.btnQueueMorpion));
-        onClickBtnQueueGame(Sudoku.class, (Button)findViewById(R.id.btnQueueSudoku));
+        onClickBtnQueueGamePublic(Morpion.class, (Button)findViewById(R.id.btnQueueMorpionPublic));
+        onClickBtnQueueGamePublic(Sudoku.class, (Button)findViewById(R.id.btnQueueSudokuPublic));
     }
     
-    private void onClickBtnQueueGame(Class<?> cls, Button button) {
+    private void onClickBtnQueueGamePublic(Class<?> cls, Button button) {
         DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(
                 300000,
                 1,
@@ -56,7 +58,7 @@ public class QueueActivity extends AppCompatActivity {
                     public void onError(Exception exception) {
                         System.err.println(exception);
                     }
-                }, QueueActivity.this, Game.JEUBEUB_API_GAME+"/"+cls.getSimpleName().toLowerCase()+"/waitQueue?playerId=1", retryPolicy);
+                }, QueueActivity.this, Game.JEUBEUB_API_GAME+"/"+cls.getSimpleName().toLowerCase()+"/waitQueue?playerId="+LoginActivity.USER_TOKEN, retryPolicy);
             }
         });
     }

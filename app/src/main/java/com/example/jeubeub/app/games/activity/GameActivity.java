@@ -1,4 +1,4 @@
-package com.example.jeubeub.app.activity.gameActivity;
+package com.example.jeubeub.app.games.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +9,8 @@ import com.android.volley.DefaultRetryPolicy;
 import com.example.jeubeub.app.LoginActivity;
 import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
-import com.example.jeubeub.app.games.Game;
-import com.example.jeubeub.app.games.popup.endGamePopup.EndGamePopup;
+import com.example.jeubeub.app.games.model.Game;
+import com.example.jeubeub.app.games.popup.EndGamePopup;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,7 +64,6 @@ public abstract class GameActivity extends AppCompatActivity {
                         public void onError(Exception exception) {
                             System.err.println(exception);
                             onErrorViewRefreshmentLoop();
-                            run();
                         }
                     }, GameActivity.this, Game.JEUBEUB_API_GAME + "/" + game.gameId + "/waitRefreshment?playerId=" + LoginActivity.USER_TOKEN, retryPolicy);
                 } else {

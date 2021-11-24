@@ -1,4 +1,4 @@
-package com.example.jeubeub.app.games.popup.endGamePopup;
+package com.example.jeubeub.app.games.popup;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,9 +8,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 
 import com.example.jeubeub.R;
-import com.example.jeubeub.app.activity.gameActivity.QueueActivity;
-import com.example.jeubeub.app.games.Game;
-import com.example.jeubeub.app.games.popup.Popup;
+import com.example.jeubeub.app.games.activity.QueueActivity;
+import com.example.jeubeub.app.games.model.Game;
+import com.example.jeubeub.app.Popup;
 
 public abstract class EndGamePopup extends Popup {
     protected Context context;

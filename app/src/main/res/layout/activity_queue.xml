@@ -1,21 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".app.activity.gameActivity.QueueActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnQueueMorpion"
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleTextQueueMorpion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Morpion"
+            android:textSize="35dp"/>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/titleTextQueueMorpion"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnQueueMorpionPublic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jouer en ligne" />
+
+            <Button
+                android:id="@+id/btnQueueMorpionPrivate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="Jouer avec un amis" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Morpion" />
+        android:layout_marginTop="50dp">
 
-    <Button
-        android:id="@+id/btnQueueSudoku"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Sudoku" />
+        <TextView
+            android:id="@+id/titleTextQueueSudoku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Sudoku"
+            android:textSize="35dp"/>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/titleTextQueueSudoku"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnQueueSudokuPublic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jouer" />
+
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

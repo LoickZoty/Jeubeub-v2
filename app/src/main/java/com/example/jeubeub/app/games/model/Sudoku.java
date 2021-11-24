@@ -1,6 +1,6 @@
-package com.example.jeubeub.app.games;
+package com.example.jeubeub.app.games.model;
 
-import com.example.jeubeub.app.activity.gameActivity.SudokuActivity;
+import com.example.jeubeub.app.games.activity.SudokuActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.example.jeubeub.app.games.popup;
+package com.example.jeubeub.app;
 
 import android.app.Dialog;
 import android.content.Context;

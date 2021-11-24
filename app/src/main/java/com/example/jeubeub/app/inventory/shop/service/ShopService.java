@@ -14,6 +14,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.LoginActivity;
+import com.example.jeubeub.app.MenuActivity;
 import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
 import com.example.jeubeub.app.inventory.shop.activity.ShopActivity;
@@ -119,7 +120,7 @@ public class ShopService {
             public void onError(Exception exception) {
                 System.err.println(exception.getMessage());
             }
-        }, activity, LoginActivity.JEUBEUB_API + "/shop/pushItemPlayer?playerId=" + LoginActivity.USER_TOKEN + "&itemId=" + id + "&itemQuantity="+quantity, null);
+        }, activity, MenuActivity.JEUBEUB_API + "/shop/pushItemPlayer?playerId=" + LoginActivity.USER_TOKEN + "&itemId=" + id + "&itemQuantity="+quantity, null);
             //TODO CONSTANTE
 
                                                                                                                                                         //        } catch (JSONException e) {

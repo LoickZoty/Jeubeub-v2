@@ -5,9 +5,8 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.example.jeubeub.R;
-import com.example.jeubeub.app.games.Sudoku;
-
-import org.json.JSONException;
+import com.example.jeubeub.app.games.model.Sudoku;
+import com.example.jeubeub.app.games.popup.EndGamePopup;
 
 public class EndGameSudokuPopup extends EndGamePopup {
 

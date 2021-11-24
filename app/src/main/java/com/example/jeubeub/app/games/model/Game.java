@@ -1,6 +1,7 @@
-package com.example.jeubeub.app.games;
+package com.example.jeubeub.app.games.model;
 
 import com.example.jeubeub.app.LoginActivity;
+import com.example.jeubeub.app.MenuActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 
 
 public abstract class Game implements Serializable {
-    public final static String JEUBEUB_API_GAME = LoginActivity.JEUBEUB_API+"/games";
+    public final static String JEUBEUB_API_GAME = MenuActivity.JEUBEUB_API+"/games";
 
     public int gameId;
     public String actualPlayer;
