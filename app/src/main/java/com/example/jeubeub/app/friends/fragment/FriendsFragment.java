@@ -39,7 +39,7 @@ public class FriendsFragment extends Fragment {
 
         friendListView = view.findViewById(R.id.friend_listView);
 
-        friendService.loadFriend(list -> friendListView.setAdapter(friendService.getAdapter(list, inflater, resultLauncher)));
+        friendService.loadFriend(list -> friendListView.setAdapter(friendService.getAdapterWithButton(list, inflater, resultLauncher)));
         return view;
     }
 

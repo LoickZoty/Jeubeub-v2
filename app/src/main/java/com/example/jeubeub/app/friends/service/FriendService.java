@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import com.google.android.gms.games.Games;
 import com.google.android.gms.games.Player;
 import com.google.android.gms.games.PlayerBuffer;
 
+import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +31,7 @@ public class FriendService {
 
     private Activity activity;
     private Context context;
+    private ArrayList<String> listIdPlayerInvited = new ArrayList<String>();
 
     public FriendService(Activity activity, Context context){
         this.activity = activity;
@@ -49,7 +52,7 @@ public class FriendService {
     }
 
     @NonNull
-    public ArrayAdapter<Player> getAdapter(List<Player> players, final LayoutInflater inflater, ActivityResultLauncher<Intent> resultLauncher) {
+    public ArrayAdapter<Player> getAdapterWithButton(List<Player> players, final LayoutInflater inflater, ActivityResultLauncher<Intent> resultLauncher) {
         return new ArrayAdapter<>(this.activity, R.layout.adapter_friend, players) {
             @Override
             public View getView(int position, View convertView, ViewGroup viewGroup) {
@@ -72,6 +75,38 @@ public class FriendService {
                 return rowView;
             }
         };
+    }
+
+    public ArrayAdapter<Player> getAdapterOnlyName(List<Player> players, final LayoutInflater inflater) {
+        return new ArrayAdapter<>(this.activity, R.layout.adapter_friend_only_name, players) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup viewGroup) {
+                @SuppressLint("ViewHolder") View rowView = inflater.inflate(R.layout.adapter_friend_only_name, viewGroup, false);
+                final Player player = getItem(position);
+                String idPlayer = player.getPlayerId();
+                TextView textView = rowView.findViewById(R.id.friend_name);
+                textView.setText(player.getDisplayName());
+                textView.setTag(idPlayer);
+
+                rowView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!listIdPlayerInvited.contains(idPlayer)){
+                            listIdPlayerInvited.add(idPlayer);
+                            rowView.setBackgroundColor(Color.GRAY);
+                        }else{
+                            listIdPlayerInvited.remove(idPlayer);
+                            rowView.setBackgroundColor(Color.WHITE);
+                        }
+                    }
+                });
+                return rowView;
+            }
+        };
+    }
+
+    public ArrayList<String> getListIdPlayerInvited (){
+        return this.listIdPlayerInvited;
     }
 }
 
