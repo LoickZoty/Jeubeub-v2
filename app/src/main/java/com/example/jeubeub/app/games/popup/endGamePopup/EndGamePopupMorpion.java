@@ -20,7 +20,6 @@ public class EndGamePopupMorpion extends EndGamePopup {
         super(context, game);
     }
 
-    @Override
     public void setView() throws JSONException {
         TextView titleText = (TextView)findViewById(R.id.titleTextEndGame);
         System.out.println(game.playersRankingFinishGame);

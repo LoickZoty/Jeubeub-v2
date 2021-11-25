@@ -12,7 +12,6 @@ public abstract class Popup extends Dialog {
         super(context);
 
         setContentView(getContentView());
-        setView();
     }
 
     public abstract int getContentView();

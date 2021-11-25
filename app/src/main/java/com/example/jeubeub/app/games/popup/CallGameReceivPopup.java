@@ -28,7 +28,9 @@ public class CallGameReceivPopup extends OKCancelPopup {
         this.gameName = json.getString("gameName");
     }
 
+    @Override
     public void setView() throws JSONException {
+        super.setView();
         TextView titleText = (TextView)findViewById(R.id.titleTextCallGame);
         titleText.setText("Ton amis "+playerIdRequest+" t'invite à jouer au "+gameName);
     }
