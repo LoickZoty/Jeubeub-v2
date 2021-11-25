@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
-    android:layout_height="400dp"
-    android:layout_gravity="center"
+    android:layout_height="150dp"
+    android:layout_gravity="center|top"
     >
 
     <TextView
-        android:id="@+id/titleTextEndGame"
+        android:id="@+id/titleTextCallGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Victoire/Defaite?" />
+        android:layout_marginTop="20dp"
+        android:text="Invitation de jeu" />
 
     <include
-        layout="@layout/fragment_btn_return"
+        layout="@layout/fragment_btn_ok_cancel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleTextCallGame" />
 
 </RelativeLayout>

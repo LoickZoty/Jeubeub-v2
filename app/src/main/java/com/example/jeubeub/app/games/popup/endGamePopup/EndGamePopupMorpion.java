@@ -8,22 +8,20 @@ import androidx.annotation.NonNull;
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.LoginActivity;
 import com.example.jeubeub.app.games.model.Morpion;
-import com.example.jeubeub.app.games.popup.EndGamePopup;
 
-public class EndGameMorpionPopup extends EndGamePopup {
+import org.json.JSONException;
+
+public class EndGamePopupMorpion extends EndGamePopup {
     public final static int EQUAL = 0;
     public final static int WIN = 1;
     public final static int LOOSE = 2;
 
-    public EndGameMorpionPopup(@NonNull Context context, Morpion game) {
+    public EndGamePopupMorpion(@NonNull Context context, Morpion game) throws JSONException {
         super(context, game);
-        System.out.println("morpionendgame");
     }
 
     @Override
-    public void setView() {
-        super.setView();
-
+    public void setView() throws JSONException {
         TextView titleText = (TextView)findViewById(R.id.titleTextEndGame);
         System.out.println(game.playersRankingFinishGame);
         int status = game.playersRankingFinishGame.get(LoginActivity.USER_TOKEN);

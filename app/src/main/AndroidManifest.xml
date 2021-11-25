@@ -49,12 +49,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".app.games.activity.QueueActivity"
-            android:exported="true" />
-        <activity
-            android:name=".app.activity.gameActivity.MorpionActivity"
-            android:exported="true" />
     </application>
 
 </manifest>
