@@ -53,40 +53,12 @@ public class QueueFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 try {
-                    CallGameRequestPopup callGameRequestPopup = new CallGameRequestPopup(getActivity(), getContext());
+                    CallGameRequestPopup callGameRequestPopup = new CallGameRequestPopup(getActivity(), getContext(), cls);
                     callGameRequestPopup.show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
-
-
-        /*
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Request.getRequest(new VolleyCallback() {
-                    @Override
-                    public void onSuccess(JSONObject json) {
-                        try {
-                            int queueId = json.getInt("id");
-
-                            //A changer en fonction de la selection des utilisateurs
-                            Request.getRequest(null, getContext(), MenuActivity.JEUBEUB_API + "/friend/sendCallGame?playerId=" + LoginActivity.USER_TOKEN + "&playerIdRequest=10&queueId=" + queueId + "&gameName=" + cls.getSimpleName(), null);
-                            Request.sendWaitQueueRequest(getContext(), cls, queueId);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onError(Exception exception) {
-                        System.err.println(exception);
-                    }
-                }, getContext(), Game.JEUBEUB_API_GAME + "/" + cls.getSimpleName().toLowerCase() + "/createPrivateQueue?playerId=" + LoginActivity.USER_TOKEN, null);
-            }
-        });
-         */
     }
 }
