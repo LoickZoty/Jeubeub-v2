@@ -13,7 +13,7 @@ import android.widget.ListView;
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.inventory.shop.model.ArticleItem;
 import com.example.jeubeub.app.inventory.shop.service.ShopService;
-import com.google.android.gms.common.api.Status;
+import com.example.jeubeub.app.leaderboard.service.LeaderboardService;
 import com.google.android.gms.wallet.AutoResolveHelper;
 import com.google.android.gms.wallet.PaymentData;
 import com.google.android.gms.wallet.PaymentDataRequest;
