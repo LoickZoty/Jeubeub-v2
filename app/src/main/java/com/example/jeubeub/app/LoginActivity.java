@@ -21,7 +21,7 @@ import com.google.android.gms.games.PlayersClient;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
-    public static String USER_TOKEN = "1";
+    public static String USER_TOKEN;
 
     private static final int LOGIN_SUCCESS = 1;
 
@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     private static LeaderboardsClient leaderboardsClient;
     private static PlayersClient playersClient;
     private static String displayName;
-    private static GoogleSignInAccount googleSignInAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,6 +12,7 @@ import com.example.jeubeub.app.friends.fragment.FriendsFragment;
 import com.example.jeubeub.app.games.fragment.QueueFragment;
 import com.example.jeubeub.app.inventory.fragment.InventoryFragment;
 import com.example.jeubeub.app.leaderboard.fragment.LeaderboardFragment;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_bar);
         bottomNav.setOnItemSelectedListener(navListener);
-
+        //LoginActivity.getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> LoginActivity.USER_TOKEN = s);
         Request.sendWaitCallGameRequest(MenuActivity.this);
     }
 

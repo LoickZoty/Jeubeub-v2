@@ -21,6 +21,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.games.Player;
 import com.google.android.gms.games.PlayerBuffer;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.AbstractCollection;
 import java.util.ArrayList;
@@ -84,18 +85,20 @@ public class FriendService {
                 @SuppressLint("ViewHolder") View rowView = inflater.inflate(R.layout.adapter_friend_only_name, viewGroup, false);
                 final Player player = getItem(position);
                 String idPlayer = player.getPlayerId();
+                String finalIdPlayer = idPlayer.substring(0);
                 TextView textView = rowView.findViewById(R.id.friend_name);
                 textView.setText(player.getDisplayName());
                 textView.setTag(idPlayer);
 
+
                 rowView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(!listIdPlayerInvited.contains(idPlayer)){
-                            listIdPlayerInvited.add(idPlayer);
+                        if(!listIdPlayerInvited.contains(finalIdPlayer)){
+                            listIdPlayerInvited.add(finalIdPlayer);
                             rowView.setBackgroundColor(Color.GRAY);
                         }else{
-                            listIdPlayerInvited.remove(idPlayer);
+                            listIdPlayerInvited.remove(finalIdPlayer);
                             rowView.setBackgroundColor(Color.WHITE);
                         }
                     }
