@@ -43,11 +43,7 @@ public class ShopActivity extends AppCompatActivity {
         paymentsClient = shopService.createPaymentsClient(this);
         ListView articleListView = findViewById(R.id.article_listView);
 
-        //TODO METHODE DANS SHOPSERVICE QUI CALL BDD POUR REMPLIRE LE SHOP
-        List<ArticleItem> list = new ArrayList<>();
-        list.add(new ArticleItem(1,"500 Or", 0.99, 500));
-        list.add(new ArticleItem(4,"100 Gemme", 2.99, 100));
-        articleListView.setAdapter(shopService.getAdapter(list, getLayoutInflater(), this));
+        shopService.getShopItem(articleListView, getLayoutInflater(), this);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

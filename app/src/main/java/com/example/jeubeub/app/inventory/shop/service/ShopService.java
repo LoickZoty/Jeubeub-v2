@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.example.jeubeub.app.LoginActivity;
 import com.example.jeubeub.app.MenuActivity;
 import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
+import com.example.jeubeub.app.inventory.model.InventoryItem;
 import com.example.jeubeub.app.inventory.shop.activity.ShopActivity;
 import com.example.jeubeub.app.inventory.shop.model.ArticleItem;
 import com.google.android.gms.wallet.PaymentData;
@@ -28,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,6 +54,9 @@ public class ShopService {
 
                 TextView friendNameView = view.findViewById(R.id.item_name);
                 friendNameView.setText(name);
+
+                TextView item_quantity = view.findViewById(R.id.item_quantity);
+                item_quantity.setText(String.valueOf(quantity));
 
                 TextView item_price = view.findViewById(R.id.item_price);
                 item_price.setText(string_price);
@@ -188,4 +194,26 @@ public class ShopService {
         return cardPaymentMethod;
     }
 
+    public void getShopItem(ListView articleListView, LayoutInflater layoutInflater, Activity activity) {
+        List<ArticleItem> list = new ArrayList<>();
+        Request.getRequest(new VolleyCallback() {
+            @Override
+            public void onSuccess(JSONObject json) {
+                try {
+                    JSONArray data = json.getJSONArray("data");
+                    for(int i =0; i < data.length(); i++){
+                        JSONObject c = data.getJSONObject(i);
+                        list.add(new ArticleItem(c.getInt("id"), c.getString("name"),c.getDouble("price") ,c.getInt("quantity") ));
+                    }
+                    articleListView.setAdapter(getAdapter(list,layoutInflater, activity));
+                }catch(Exception e){
+                    System.err.println(e.getMessage());
+                }
+            }
+            @Override
+            public void onError(Exception exception) {
+                System.err.println(exception.getMessage());
+            }
+        }, activity, MenuActivity.JEUBEUB_API + "/shop/displayItems", null);
+    }
 }

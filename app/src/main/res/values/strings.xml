@@ -14,6 +14,7 @@
     <string name="description_item">item_description</string>
     <string name="buy_button">Acheter</string>
     <string name="nom_item_default">Nom article</string>
+    <string name="quantity_item_default">0</string>
     <string name="default_price">0€</string>
     <string name="voir_profil">Profil</string>
     <string name="morpion">Morpion</string>
