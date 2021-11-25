@@ -15,9 +15,11 @@ import com.example.jeubeub.app.LoginActivity;
 import com.example.jeubeub.app.MenuActivity;
 import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
+import com.example.jeubeub.app.friends.popup.CallGameRequestPopup;
 import com.example.jeubeub.app.games.model.Game;
 import com.example.jeubeub.app.games.model.Morpion;
 import com.example.jeubeub.app.games.model.Sudoku;
+import com.example.jeubeub.app.games.popup.endGamePopup.EndGamePopup;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,6 +52,20 @@ public class QueueFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    CallGameRequestPopup callGameRequestPopup = new CallGameRequestPopup(getContext());
+                    callGameRequestPopup.show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+        /*
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Request.getRequest(new VolleyCallback() {
                     @Override
                     public void onSuccess(JSONObject json) {
@@ -71,5 +87,6 @@ public class QueueFragment extends Fragment {
                 }, getContext(), Game.JEUBEUB_API_GAME + "/" + cls.getSimpleName().toLowerCase() + "/createPrivateQueue?playerId=" + LoginActivity.USER_TOKEN, null);
             }
         });
+         */
     }
 }

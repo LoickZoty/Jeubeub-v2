@@ -26,6 +26,8 @@ public class CallGameReceivPopup extends OKCancelPopup {
         this.playerIdRequest = json.getInt("playerIdRequest");
         this.queueId = json.getInt("queueId");
         this.gameName = json.getString("gameName");
+
+        setView();
     }
 
     @Override

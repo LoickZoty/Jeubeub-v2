@@ -21,6 +21,7 @@ public abstract class EndGamePopup extends Popup {
         super(context);
         this.game = game;
 
+        setView();
         initializeOnClickReturnQueue();
     }
 

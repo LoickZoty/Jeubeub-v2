@@ -12,16 +12,22 @@ import com.example.jeubeub.app.api.Request;
 import org.json.JSONException;
 
 public abstract class OKCancelPopup extends Popup {
+    private Button btnOK;
+    private Button btnCancel;
+
     public OKCancelPopup(@NonNull Context context) throws JSONException {
         super(context);
+
+        btnOK = findViewById(R.id.btnOK);
+        btnCancel = findViewById(R.id.btnCancel);
 
         initializeOnClickOK();
         initializeOnClickCancel();
     }
 
     public void setView() throws JSONException {
-        ((Button)findViewById(R.id.btnOK)).setText("OK");
-        ((Button)findViewById(R.id.btnCancel)).setText("Annuler");
+        btnOK.setText("OK");
+        btnCancel.setText("Annuler");
     }
 
     protected abstract void eventOnClickOK();
@@ -29,7 +35,7 @@ public abstract class OKCancelPopup extends Popup {
     protected abstract void eventOnClickCancel();
 
     private void initializeOnClickOK() {
-        findViewById(R.id.btnOK).setOnClickListener(new View.OnClickListener() {
+        btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
@@ -39,7 +45,7 @@ public abstract class OKCancelPopup extends Popup {
     }
 
     private void initializeOnClickCancel() {
-        findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
