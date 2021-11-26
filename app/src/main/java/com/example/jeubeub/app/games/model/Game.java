@@ -16,6 +16,10 @@ import java.util.Map;
 public abstract class Game implements Serializable {
     public final static String JEUBEUB_API_GAME = MenuActivity.JEUBEUB_API+"/game";
 
+    public final static int EQUAL = 0;
+    public final static int WIN = 1;
+    public final static int LOOSE = 2;
+
     public int gameId;
     public String actualPlayer;
 

@@ -1,21 +1,18 @@
 package com.example.jeubeub.app.games.popup;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.example.jeubeub.R;
-import com.example.jeubeub.app.popup.OKCancelPopup;
-import com.example.jeubeub.app.popup.Popup;
+import com.example.jeubeub.app.popup.ConfirmPopup;
 import com.example.jeubeub.app.api.Request;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CallGameReceivPopup extends OKCancelPopup {
+public class CallGameReceivPopup extends ConfirmPopup {
     protected int playerIdRequest;
     protected int queueId;
     protected String gameName;

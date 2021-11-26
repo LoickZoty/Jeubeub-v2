@@ -58,12 +58,6 @@ public abstract class GameActivity extends AppCompatActivity {
         } else {
             try {
                 EndGamePopup endGamePopup = getEndGamePopup();
-                int status = game.playersRankingFinishGame.get(LoginActivity.USER_TOKEN);
-                if(status == 1){
-                    LeaderboardService.submitNewScore(1,LeaderboardService.MORPION_VICTOIRE,this);
-                }else if (status == 2){
-                    LeaderboardService.submitNewScore(1,LeaderboardService.MORPION_DEFAITE,this);
-                }
                 endGamePopup.show();
             } catch (JSONException e) {
                 e.printStackTrace();

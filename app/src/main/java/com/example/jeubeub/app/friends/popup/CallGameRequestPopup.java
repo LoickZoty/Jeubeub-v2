@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
-
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.LoginActivity;
 import com.example.jeubeub.app.MenuActivity;
@@ -13,28 +11,26 @@ import com.example.jeubeub.app.api.Request;
 import com.example.jeubeub.app.api.VolleyCallback;
 import com.example.jeubeub.app.friends.service.FriendService;
 import com.example.jeubeub.app.games.model.Game;
-import com.example.jeubeub.app.popup.OKCancelPopup;
-import com.example.jeubeub.app.popup.Popup;
+import com.example.jeubeub.app.popup.ConfirmPopup;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CallGameRequestPopup extends OKCancelPopup {
+public class CallGameRequestPopup extends ConfirmPopup {
 
     private FriendService friendService;
     private Class<?> cls;
 
-    public CallGameRequestPopup(Activity activity, Context context, Class<?> cls) throws JSONException {
+    public CallGameRequestPopup(Context context, Class<?> cls) throws JSONException {
         super(context);
         this.cls = cls;
-        friendService = new FriendService(activity, getContext());
+        friendService = new FriendService(getOwnerActivity(), getContext());
         ListView friendListView = findViewById(R.id.friend_listView);
         friendService.loadFriend(list -> friendListView.setAdapter(friendService.getAdapterOnlyName(list, getLayoutInflater())));
     }
 
     @Override
     protected void eventOnClickOK() {
-        System.out.println();
         Request.getRequest(new VolleyCallback() {
             @Override
             public void onSuccess(JSONObject json) {

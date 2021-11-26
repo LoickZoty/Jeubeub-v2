@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.jeubeub.R;
 import com.example.jeubeub.app.api.Request;
@@ -22,10 +23,13 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_bar);
         bottomNav.setOnItemSelectedListener(navListener);
-        //LoginActivity.getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> LoginActivity.USER_TOKEN = s);
+
         Request.sendWaitCallGameRequest(MenuActivity.this);
+
+        Toast.makeText(this, LoginActivity.USER_TOKEN, Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("NonConstantResourceId")

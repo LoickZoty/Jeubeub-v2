@@ -16,7 +16,7 @@
         android:text="Invitation de jeu" />
 
     <include
-        layout="@layout/fragment_btn_ok_cancel"
+        layout="@layout/fragment_btn_confirm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/titleTextCallGame" />

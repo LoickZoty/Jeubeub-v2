@@ -1,3 +1,2 @@
-- corriger popup fin de game
-- api shop
-- inviter un amis requete
+- Menu par defaut n'affiche pas le leaderbord (obliger de cliquer dessus pour afficher)
+- Plus besoin des boutons d'invite dans friends

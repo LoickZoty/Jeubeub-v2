@@ -16,7 +16,7 @@
         android:text="Victoire/Defaite?" />
 
     <include
-        layout="@layout/fragment_btn_return"
+        layout="@layout/fragment_btn_alert"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

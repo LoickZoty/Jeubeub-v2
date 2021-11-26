@@ -53,7 +53,7 @@ public class QueueFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 try {
-                    CallGameRequestPopup callGameRequestPopup = new CallGameRequestPopup(getActivity(), getContext(), cls);
+                    CallGameRequestPopup callGameRequestPopup = new CallGameRequestPopup(getContext(), cls);
                     callGameRequestPopup.show();
                 } catch (JSONException e) {
                     e.printStackTrace();

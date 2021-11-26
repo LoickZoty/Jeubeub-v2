@@ -11,23 +11,23 @@ import com.example.jeubeub.app.api.Request;
 
 import org.json.JSONException;
 
-public abstract class OKCancelPopup extends Popup {
-    private Button btnOK;
-    private Button btnCancel;
+public abstract class ConfirmPopup extends Popup {
+    protected Button btnConfirmOK;
+    protected Button btnConfirmCancel;
 
-    public OKCancelPopup(@NonNull Context context) throws JSONException {
+    public ConfirmPopup(@NonNull Context context) throws JSONException {
         super(context);
 
-        btnOK = findViewById(R.id.btnOK);
-        btnCancel = findViewById(R.id.btnCancel);
+        btnConfirmOK = findViewById(R.id.btnConfirmOK);
+        btnConfirmCancel = findViewById(R.id.btnConfirmCancel);
 
         initializeOnClickOK();
         initializeOnClickCancel();
     }
 
     public void setView() throws JSONException {
-        btnOK.setText("OK");
-        btnCancel.setText("Annuler");
+        btnConfirmOK.setText("OK");
+        btnConfirmCancel.setText("Annuler");
     }
 
     protected abstract void eventOnClickOK();
@@ -35,7 +35,7 @@ public abstract class OKCancelPopup extends Popup {
     protected abstract void eventOnClickCancel();
 
     private void initializeOnClickOK() {
-        btnOK.setOnClickListener(new View.OnClickListener() {
+        btnConfirmOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
@@ -45,7 +45,7 @@ public abstract class OKCancelPopup extends Popup {
     }
 
     private void initializeOnClickCancel() {
-        btnCancel.setOnClickListener(new View.OnClickListener() {
+        btnConfirmCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();

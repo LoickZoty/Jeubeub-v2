@@ -21,7 +21,7 @@ import com.google.android.gms.games.PlayersClient;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
-    public static String USER_TOKEN;
+    public static String USER_TOKEN = "1";
 
     private static final int LOGIN_SUCCESS = 1;
 
@@ -62,11 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null){
             Toast.makeText(this,"Bonjour " + account.getGivenName(), Toast.LENGTH_SHORT).show();
-            playersClient = Games.getPlayersClient(this, account);
-            leaderboardsClient = Games.getLeaderboardsClient(this, account);
-            displayName = account.getDisplayName();
-            USER_TOKEN = account.getId();
-            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+            connect(account);
         }
     }
 
@@ -82,14 +78,18 @@ public class LoginActivity extends AppCompatActivity {
     private void handleSignInResult (Task< GoogleSignInAccount > completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            playersClient = Games.getPlayersClient(this, account);
-            leaderboardsClient = Games.getLeaderboardsClient(this, account);
-            displayName = account.getDisplayName();
-            USER_TOKEN = account.getId();
-            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+            connect(account);
         } catch (ApiException e) {
             System.out.println("signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    public void connect(GoogleSignInAccount account) {
+        playersClient = Games.getPlayersClient(this, account);
+        leaderboardsClient = Games.getLeaderboardsClient(this, account);
+        displayName = account.getDisplayName();
+        getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> USER_TOKEN = s);
+        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
     }
 
     public static PlayersClient getPlayersClient(){
