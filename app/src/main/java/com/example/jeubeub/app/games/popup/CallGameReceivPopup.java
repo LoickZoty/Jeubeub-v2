@@ -13,14 +13,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CallGameReceivPopup extends ConfirmPopup {
-    protected int playerIdRequest;
+    protected String playerIdRequest;
     protected int queueId;
     protected String gameName;
 
     public CallGameReceivPopup(@NonNull Context context, JSONObject json) throws JSONException {
         super(context);
 
-        this.playerIdRequest = json.getInt("playerIdRequest");
+        this.playerIdRequest = json.getString("playerIdRequest");
         this.queueId = json.getInt("queueId");
         this.gameName = json.getString("gameName");
 

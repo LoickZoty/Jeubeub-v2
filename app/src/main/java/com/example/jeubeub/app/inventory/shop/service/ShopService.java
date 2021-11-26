@@ -105,33 +105,20 @@ public class ShopService {
     }
 
     public void handlePaymentSuccess(Activity activity, PaymentData paymentData, int id, int quantity) {
-                                                                                                                                                        //        final String paymentInfo = paymentData.toJson();
-                                                                                                                                                        //        try {
-                                                                                                                                                        //            JSONObject paymentMethodData = new JSONObject(paymentInfo).getJSONObject("paymentMethodData");
-                                                                                                                                                        //            final JSONObject tokenizationData = paymentMethodData.getJSONObject("tokenizationData");
-                                                                                                                                                        //            final String token = tokenizationData.getString("token");
-                                                                                                                                                        //            final JSONObject info = paymentMethodData.getJSONObject("info");
-                                                                                                                                                        //            final String billingName = info.getJSONObject("billingAddress").getString("name");
-
-        Toast.makeText(activity, "Achat effectué !", Toast.LENGTH_SHORT).show();
         Request.getRequest(new VolleyCallback() {
             @Override
             public void onSuccess(JSONObject json) {
-                //TODO Ce toast la n'est pas affiché car la requete renvoie faux du coup on est tjs dans le onError
-                //soit on regle le probleme du return false de la requete ou soit on affiche pas de toast mais du coup on aura
-                // une methode onSuccess vide quoi mais c'est pas la priorité
                 Toast.makeText(activity, "Achat effectué !", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onError(Exception exception) {
-                System.err.println(exception.getMessage());
+                Toast.makeText(activity, "Achat refusé !!", Toast.LENGTH_SHORT).show();
             }
         }, activity, MenuActivity.JEUBEUB_API + "/shop/pushItemPlayer?playerId=" + LoginActivity.USER_TOKEN + "&itemId=" + id + "&itemQuantity="+quantity, null);
             //TODO CONSTANTE
 
                                                                                                                                                         //        } catch (JSONException e) {
-                                                                                                                                                        //            throw new RuntimeException("The selected garment cannot be parsed from the list of elements");
-                                                                                                                                                        //        }
+                                                                                                                                                        //            throw new RuntimeException("The selected garment cannot be parsed from the list of elements")//        }
     }
 
     public  PaymentsClient createPaymentsClient(Activity activity) {
