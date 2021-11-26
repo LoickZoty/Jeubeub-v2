@@ -88,7 +88,9 @@ public class LoginActivity extends AppCompatActivity {
         playersClient = Games.getPlayersClient(this, account);
         leaderboardsClient = Games.getLeaderboardsClient(this, account);
         displayName = account.getDisplayName();
-        getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> USER_TOKEN = s);
+        USER_TOKEN = getPlayersClient().getCurrentPlayerId().getResult();
+        System.out.println("Le token : "+USER_TOKEN);
+                //getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> USER_TOKEN = s);
         startActivity(new Intent(LoginActivity.this, MenuActivity.class));
     }
 

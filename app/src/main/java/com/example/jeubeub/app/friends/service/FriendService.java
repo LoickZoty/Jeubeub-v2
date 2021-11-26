@@ -40,8 +40,6 @@ public class FriendService {
     }
 
     public void loadFriend(loadFriendCallBack loadFriendCallBack) {
-        System.out.println(activity);
-        System.out.println(context);
         GoogleSignIn.requestPermissions(this.activity, 1, GoogleSignIn.getLastSignedInAccount(this.context), Games.GamesOptions.builder().build());
         Games.getPlayersClient(this.activity, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this.context))).loadFriends(100, false)
             .addOnSuccessListener( data -> {

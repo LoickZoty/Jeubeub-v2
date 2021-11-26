@@ -26,6 +26,7 @@ public class MenuActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_bar);
         bottomNav.setOnItemSelectedListener(navListener);
+        bottomNav.setSelectedItemId(R.id.games_button); //Menu par defaut
 
         Request.sendWaitCallGameRequest(MenuActivity.this);
 
