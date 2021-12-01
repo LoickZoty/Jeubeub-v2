@@ -21,7 +21,7 @@ import com.google.android.gms.games.PlayersClient;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
-    public static String USER_TOKEN = "1";
+    public static String USER_TOKEN;
 
     private static final int LOGIN_SUCCESS = 1;
 
@@ -88,10 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         playersClient = Games.getPlayersClient(this, account);
         leaderboardsClient = Games.getLeaderboardsClient(this, account);
         displayName = account.getDisplayName();
-        getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> {
-            USER_TOKEN = s;
-            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
-        });
+        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
     }
 
     public static PlayersClient getPlayersClient(){

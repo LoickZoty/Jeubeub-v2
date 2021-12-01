@@ -21,16 +21,6 @@
             android:layout_height="wrap_content"
             android:text="@string/default_friend_name" />
 
-
-    <Button
-        android:id="@+id/invite_friend_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:text="@string/invite_friend"
-        android:tag=""
-        />
-
     <Button
         android:id="@+id/show_profile"
         android:layout_width="wrap_content"

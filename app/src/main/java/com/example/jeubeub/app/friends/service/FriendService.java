@@ -61,12 +61,6 @@ public class FriendService {
                 final Player player = getItem(position);
                 TextView textView = rowView.findViewById(R.id.friend_name);
                 textView.setText(player.getDisplayName());
-                Button buttonInvite = rowView.findViewById(R.id.invite_friend_id);
-                buttonInvite.setTag(player.getPlayerId());
-                buttonInvite.setOnClickListener(v -> {
-                    //Quand on est ici c'est quand on clique sur le bouton pour inviter un ami a jouer
-                    //buttonInvite.getTag() permet de recup l'id du joueur que l'on veut inviter
-                });
                 Button showProfileButton = rowView.findViewById(R.id.show_profile);
                 //TODO CONSTANTE
                 showProfileButton.setOnClickListener(v -> LoginActivity.getPlayersClient()
