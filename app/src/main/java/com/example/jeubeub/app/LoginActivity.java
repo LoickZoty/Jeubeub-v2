@@ -1,5 +1,6 @@
 package com.example.jeubeub.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.games.LeaderboardsClient;
 import com.google.android.gms.games.PlayersClient;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
@@ -88,7 +91,22 @@ public class LoginActivity extends AppCompatActivity {
         playersClient = Games.getPlayersClient(this, account);
         leaderboardsClient = Games.getLeaderboardsClient(this, account);
         displayName = account.getDisplayName();
-        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+
+        getPlayersClient().getCurrentPlayerId().addOnSuccessListener(new OnSuccessListener<String>() {
+            @Override
+            public void onSuccess(@NonNull String response) {
+                System.out.println(response);
+                Toast.makeText(LoginActivity.this, USER_TOKEN, Toast.LENGTH_SHORT).show();
+                USER_TOKEN = response;
+                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                System.err.println(e.getMessage());
+                Toast.makeText(LoginActivity.this, "ERROR : "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public static PlayersClient getPlayersClient(){

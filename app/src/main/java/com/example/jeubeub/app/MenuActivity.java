@@ -1,5 +1,6 @@
 package com.example.jeubeub.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
@@ -13,6 +14,7 @@ import com.example.jeubeub.app.friends.fragment.FriendsFragment;
 import com.example.jeubeub.app.games.fragment.QueueFragment;
 import com.example.jeubeub.app.inventory.fragment.InventoryFragment;
 import com.example.jeubeub.app.leaderboard.fragment.LeaderboardFragment;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,12 +28,23 @@ public class MenuActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_bar);
         bottomNav.setOnItemSelectedListener(navListener);
         bottomNav.setSelectedItemId(R.id.games_button); //Menu par defaut
-        LoginActivity.getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> {
-            LoginActivity.USER_TOKEN = s;
-            Toast.makeText(this, LoginActivity.USER_TOKEN, Toast.LENGTH_SHORT).show();
 
-            Request.sendWaitCallGameRequest(MenuActivity.this);
+        /*
+        LoginActivity.getPlayersClient().getCurrentPlayerId().addOnSuccessListener(new OnSuccessListener<String>() {
+            @Override
+            public void onSuccess(@NonNull String response) {
+                System.out.println(response);
+                Toast.makeText(MenuActivity.this, LoginActivity.USER_TOKEN, Toast.LENGTH_SHORT).show();
+                LoginActivity.USER_TOKEN = response;
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                System.err.println(e.getMessage());
+                Toast.makeText(MenuActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         });
+         */
     }
 
 
