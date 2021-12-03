@@ -23,15 +23,17 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_bar);
         bottomNav.setOnItemSelectedListener(navListener);
         bottomNav.setSelectedItemId(R.id.games_button); //Menu par defaut
+        LoginActivity.getPlayersClient().getCurrentPlayerId().addOnSuccessListener(s -> {
+            LoginActivity.USER_TOKEN = s;
+            Toast.makeText(this, LoginActivity.USER_TOKEN, Toast.LENGTH_SHORT).show();
 
-        Request.sendWaitCallGameRequest(MenuActivity.this);
-
-        Toast.makeText(this, LoginActivity.USER_TOKEN, Toast.LENGTH_SHORT).show();
+            Request.sendWaitCallGameRequest(MenuActivity.this);
+        });
     }
+
 
     @SuppressLint("NonConstantResourceId")
     private final BottomNavigationView.OnItemSelectedListener navListener =

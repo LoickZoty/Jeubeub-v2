@@ -13,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CallGameReceivPopup extends ConfirmPopup {
+
     protected String playerIdRequest;
     protected int queueId;
     protected String gameName;

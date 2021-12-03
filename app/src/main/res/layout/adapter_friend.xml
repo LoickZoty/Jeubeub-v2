@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -8,35 +10,33 @@
         android:id="@+id/friend_photo"
         android:layout_width="53dp"
         android:layout_height="49dp"
-        android:src="@drawable/baseline_people_24"
+        android:layout_margin="40dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="49dp"
         android:contentDescription="@string/description_profile_image"
-        android:layout_margin="10dp"
-        />
+        android:src="@drawable/baseline_people_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-
-        <TextView
-            android:id="@+id/friend_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/default_friend_name" />
-
-
-    <Button
-        android:id="@+id/invite_friend_id"
+    <TextView
+        android:id="@+id/friend_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:text="@string/invite_friend"
-        android:tag=""
-        />
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="63dp"
+        android:text="@string/default_friend_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/show_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
+        android:layout_marginStart="257dp"
+        android:layout_marginTop="49dp"
         android:text="@string/voir_profil"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
