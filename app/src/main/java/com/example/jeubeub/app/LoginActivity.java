@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int LOGIN_SUCCESS = 1;
 
     private static GoogleSignInClient googleClient;
+    public static GoogleSignInOptions gso;
     private static LeaderboardsClient leaderboardsClient;
     private static PlayersClient playersClient;
     private static String displayName;
@@ -37,8 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .build();
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build();
 
         googleClient = GoogleSignIn.getClient(this,gso);
 

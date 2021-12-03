@@ -14,6 +14,8 @@ import com.example.jeubeub.app.friends.fragment.FriendsFragment;
 import com.example.jeubeub.app.games.fragment.QueueFragment;
 import com.example.jeubeub.app.inventory.fragment.InventoryFragment;
 import com.example.jeubeub.app.leaderboard.fragment.LeaderboardFragment;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -67,7 +69,7 @@ public class MenuActivity extends AppCompatActivity {
                     break;
                 case R.id.sign_out_button:
                     //TODO CONSTANTE
-                    findViewById(R.id.sign_out_button).setOnClickListener(view -> LoginActivity.getGoogleSignInClient().signOut().addOnCompleteListener(this,
+                    findViewById(R.id.sign_out_button).setOnClickListener(view -> GoogleSignIn.getClient(MenuActivity.this, LoginActivity.gso).signOut().addOnCompleteListener(this,
                             task -> startActivity(new Intent(MenuActivity.this, LoginActivity.class))));
                     break;
             }
