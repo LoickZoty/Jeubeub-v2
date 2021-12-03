@@ -25,11 +25,11 @@ import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
     public static String USER_TOKEN;
+    public static boolean reconnect = false;
 
     private static final int LOGIN_SUCCESS = 1;
 
     private static GoogleSignInClient googleClient;
-    public static GoogleSignInOptions gso;
     private static LeaderboardsClient leaderboardsClient;
     private static PlayersClient playersClient;
     private static String displayName;
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build();
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build();
 
         googleClient = GoogleSignIn.getClient(this,gso);
 
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart () {
         super.onStart();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if(account != null){
+        if(account != null && !reconnect) {
             Toast.makeText(this,"Bonjour " + account.getGivenName(), Toast.LENGTH_SHORT).show();
             connect(account);
         }
@@ -88,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void connect(GoogleSignInAccount account) {
+        reconnect = false;
         playersClient = Games.getPlayersClient(this, account);
         leaderboardsClient = Games.getLeaderboardsClient(this, account);
         displayName = account.getDisplayName();
