@@ -97,8 +97,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(@NonNull String response) {
                 System.out.println(response);
-                Toast.makeText(LoginActivity.this, USER_TOKEN, Toast.LENGTH_SHORT).show();
                 USER_TOKEN = response;
+                Toast.makeText(LoginActivity.this, USER_TOKEN, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(LoginActivity.this, MenuActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
